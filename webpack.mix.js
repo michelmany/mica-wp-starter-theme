@@ -6,6 +6,7 @@
  */
 
 let mix = require('laravel-mix');
+require('laravel-mix-purgecss');
 
 // mix.autoload({
 // 	jquery: ['$', 'window.jQuery', 'jQuery'],
@@ -14,19 +15,22 @@ let mix = require('laravel-mix');
 mix.setPublicPath('dist');
 
 mix
-  .js('src/js/main.js', 'dist')
-  .sass('src/scss/main.scss', 'dist').options({
-    processCssUrls: false
-  })
-  .copy('src/img', 'dist/images')
-  .copy('src/fonts', 'dist/fonts')
+    .js('src/js/main.js', 'dist')
+    .sass('src/scss/main.scss', 'dist').options({
+        processCssUrls: false
+    })
+    .purgeCss({
+        enabled: true,
+    })
+    .copy('src/img', 'dist/images')
+    .copy('src/fonts', 'dist/fonts')
 
-  .browserSync({
-   proxy: '', // https://yoursite.local
-   ghostMode: false,
-  });
+    .browserSync({
+        proxy: '', // https://yoursite.local
+        ghostMode: false,
+    });
 
 // Add source map and versioning to assets in production environment.
-if ( mix.inProduction() ) {
-	mix.sourceMaps().version('images/');
+if (mix.inProduction()) {
+    mix.sourceMaps().version('images/');
 }
