@@ -21,12 +21,17 @@ mix
     })
     .purgeCss({
         enabled: true,
+        content: [
+            "**/*.php",
+            "views/**/*.twig",
+        ],
+        safelist: ['btn', 'bg-primary', /^nav-/],
     })
-    .copy('src/img', 'dist/images')
+    .copy('src/img', 'dist/img')
     .copy('src/fonts', 'dist/fonts')
 
     .browserSync({
-        proxy: '', // https://yoursite.local
+        proxy: 'https://foodiesfeed.local/', // https://yoursite.local
         ghostMode: false,
     });
 
