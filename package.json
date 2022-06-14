@@ -1,0 +1,33 @@
+{
+  "name": "wp-starter-theme-twig-sass-bs5",
+  "version": "1.0.0",
+  "description": "WordPress Starter Theme with Twig, Sass and Bootstrap 5 pre-installed.",
+  "main": "index.js",
+  "scripts": {
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "build": "mix --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michelmany/wp-starter-theme-twig-sass-bs5.git"
+  },
+  "keywords": [],
+  "author": "Michel Moraes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michelmany/wp-starter-theme-twig-sass-bs5/issues"
+  },
+  "homepage": "https://github.com/michelmany/wp-starter-theme-twig-sass-bs5#readme",
+  "devDependencies": {
+    "bootstrap": "5.2.0-beta1",
+    "browser-sync": "^2.27.5",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "laravel-mix": "^6.0.31",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0"
+  }
+}
